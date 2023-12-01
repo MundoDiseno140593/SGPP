@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
 
+    function index() {
+        return view('auth.login');
+    }
 
     use AuthenticatesUsers;
 

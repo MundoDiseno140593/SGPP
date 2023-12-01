@@ -28,7 +28,7 @@
               <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3 ">Login</p>
+                  <p class="lead fw-normal mb-0 me-3 "></p>
 
                 </div>
 
@@ -72,8 +72,13 @@
                 </form>
                   </div>
 
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
-                      class="link-danger"><a href="{{ route('register') }}">Registrarte</a></a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
+
+                @if (Route::has('register'))
+                 <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif
+
+                    </p>
                 </div>
 
 

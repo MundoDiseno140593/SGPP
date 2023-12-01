@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Registro</title>
   <link rel="icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
   <!-- Required meta tags -->
@@ -28,12 +28,12 @@
               <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3 ">Login</p>
+                  <p class="lead fw-normal mb-0 me-3 "></p>
 
                 </div>
 
                 <div class="divider d-flex align-items-center my-4">
-                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesion</h2>
+                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Registrar Sus Datos</h2>
                 </div>
 
                 <!-- Email input -->
@@ -71,8 +71,9 @@
                     <a href="#!" class="text-body">Recupera Contraseña</a>
                   </div>
                 </form>
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
-                      class="link-danger"><a href="{{ route('login') }}">Registrarte</a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si tienes una cuenta, Ir a?
+
+                    <a class="link-danger"><a href="{{ route('login') }}">{{ __('Login') }}</a></p>
                 </div>
 
 
