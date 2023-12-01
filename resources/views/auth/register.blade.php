@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Registro</title>
+  <title>Login</title>
   <link rel="icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
   <!-- Required meta tags -->
@@ -28,29 +28,35 @@
               <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3 "></p>
+                  <p class="lead fw-normal mb-0 me-3 ">Login</p>
 
                 </div>
 
                 <div class="divider d-flex align-items-center my-4">
-                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Registrar Sus Datos</h2>
+                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesion</h2>
                 </div>
 
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">usuario:</label>
-                  <input type="text" id="user" name="user" class="form-control form-control-lg"
-                    placeholder="Ingrese usuario" />
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
-                </div>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                <!-- Password input -->
-                <div class="form-outline mb-3">
-                    <label class="form-label" for="form3Example4">Contraseña:</label>
-                  <input type="password" id="pass" name="pass" class="form-control form-control-lg"
-                    placeholder="Ingrese Contraseña" />
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-                </div>
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
 
 
 
@@ -71,25 +77,11 @@
                     <a href="#!" class="text-body">Recupera Contraseña</a>
                   </div>
                 </form>
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si tienes una cuenta, Ir a?
-
-                    <a class="link-danger"><a href="{{ route('login') }}">{{ __('Login') }}</a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
+                      class="link-danger"><a href="{{ route('login') }}">Registrarte</a></p>
                 </div>
-
-
             </div>
-          </div>
         </div>
-
-      </section>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
+    </div>
+</div>
+@endsection
