@@ -25,10 +25,10 @@
                 class="img-fluid w-50 h-50" alt="Sample image" >
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form action="{{ route('login')}}" method="POST">
-                @csrf
+              <form>
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3 "></p>
+
                 </div>
                 <div class="divider d-flex align-items-center my-4">
                   <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesión</h2>
@@ -36,16 +36,16 @@
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Usuario</label>
                   <input type="text" id="user" name="user" class="form-control form-control-lg"
-                    placeholder="Nombre usuario"/>
+                    placeholder="Ingrese usuario" />
+                  <label class="form-label" for="form3Example3">usuario:</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                <label class="form-label" for="form3Example4">Contraseña</label>
                   <input type="password" id="pass" name="pass" class="form-control form-control-lg"
-                    placeholder="Contraseña"/>
+                    placeholder="Ingrese Contraseña" />
+                  <label class="form-label" for="form3Example4">Contraseña:</label>
                 </div>
 
                 <div class="text-center mt-4 pt-1">
@@ -63,11 +63,13 @@
                       </label>
                     </div>
                     <a href="#!" class="text-body">Recupera Contraseña</a>
+                </form>
                   </div>
 
-                  <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="{{ route('register')}}"
-                      class="link-danger">Registrarse</a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
+                      class="link-danger">Registrarte</a></p>
                 </div>
+
               </form>
             </div>
           </div>
