@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Registro</title>
   <link rel="icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon"/>
   <!-- Required meta tags -->
@@ -25,40 +25,33 @@
                 class="img-fluid w-70 h-70" alt="Sample image" >
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form action="{{ route('register') }}" method="POST">
+
+              <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3 ">Login</p>
+                  <p class="lead fw-normal mb-0 me-3 "></p>
 
                 </div>
 
                 <div class="divider d-flex align-items-center my-4">
-                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesion</h2>
+                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Registrar</h2>
                 </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">usuario:</label>
+                  <input type="text" id="user" name="user" class="form-control form-control-lg"
+                    placeholder="Ingrese usuario" />
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                </div>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Contraseña:</label>
+                  <input type="password" id="pass" name="pass" class="form-control form-control-lg"
+                    placeholder="Ingrese Contraseña" />
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-
+                </div>
 
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="button" class="btn btn-primary btn-lg"
@@ -75,13 +68,32 @@
                       </label>
                     </div>
                     <a href="#!" class="text-body">Recupera Contraseña</a>
-                  </div>
                 </form>
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
-                      class="link-danger"><a href="{{ route('login') }}">Registrarte</a></p>
+                  </div>
+
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
+
+                @if (Route::has('login'))
+                 <a class="link-danger"><a href="{{ route('login') }}">{{ __('Login') }}</a>
+                @endif
+
+                    </p>
                 </div>
+
+
             </div>
+          </div>
         </div>
-    </div>
-</div>
-@endsection
+
+      </section>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
