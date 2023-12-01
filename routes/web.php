@@ -23,5 +23,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login-acceso', [LoginController::class, 'login_acceso'])->name('login-acceso');
 
 
