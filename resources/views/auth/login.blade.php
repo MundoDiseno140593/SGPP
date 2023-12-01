@@ -22,39 +22,36 @@
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
               <img src="{{ asset('img/logo.webp') }}"
-                class="img-fluid w-70 h-70" alt="Sample image" >
+                class="img-fluid w-50 h-50" alt="Sample image" >
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form>
+              <form action="{{ route('login')}}" method="POST">
+                @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3 "></p>
-
                 </div>
-
                 <div class="divider d-flex align-items-center my-4">
-                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesion</h2>
+                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesión</h2>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Usuario</label>
                   <input type="text" id="user" name="user" class="form-control form-control-lg"
-                    placeholder="Ingrese usuario" />
-                  <label class="form-label" for="form3Example3">usuario:</label>
+                    placeholder="Nombre usuario"/>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-3">
+                <label class="form-label" for="form3Example4">Contraseña</label>
                   <input type="password" id="pass" name="pass" class="form-control form-control-lg"
-                    placeholder="Ingrese Contraseña" />
-                  <label class="form-label" for="form3Example4">Contraseña:</label>
+                    placeholder="Contraseña"/>
                 </div>
 
-
-
-                <div class="text-center text-lg-start mt-4 pt-2">
+                <div class="text-center mt-4 pt-1">
                   <button type="button" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                    Acceso
+                    Acceder
                 </button>
 
                 <div class="d-flex justify-content-between align-items-center">
@@ -68,15 +65,13 @@
                     <a href="#!" class="text-body">Recupera Contraseña</a>
                   </div>
 
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta? <a href="#!"
-                      class="link-danger">Registrarte</a></p>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="{{ route('register')}}"
+                      class="link-danger">Registrarse</a></p>
                 </div>
-
               </form>
             </div>
           </div>
         </div>
-
       </section>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
