@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -15,6 +18,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
     /**
      * Where to redirect users after login.
      *
@@ -22,13 +26,36 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::LOGIN;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+    public  function login_acceso(Request $request):RedirectResponse {
+        // dd($request->all()); imprir en laravel
+
+       $acredenciales= $request->validate([
+            'username'=>'required',
+            'password'=>'required'
+        ]);
+
+        // $data=[
+        //     'username'=>$request->user,
+        //     'password'=>$request->pass
+        // ];
+
+        if (Auth::attempt($acredenciales)) {
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard');
+        }else{
+            return redirect()->route('login')->with('error','usuario y Contraseña Incorrectas');
+        }
+
+    }
+
+    public function logout(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
     }
 }

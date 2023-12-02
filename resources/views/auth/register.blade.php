@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-              <form action="{{ route('login') }}" method="POST">
+              <form action="{{ route('login-registro') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3 "></p>
@@ -39,22 +39,35 @@
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">usuario:</label>
-                  <input type="text" id="user" name="user" class="form-control form-control-lg"
+                    <label class="form-label" for="form3Example3">Nombre Completo:</label>
+                  <input type="text" id="name" name="name" class="form-control form-control-lg"
                     placeholder="Ingrese usuario" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">usuario:</label>
+                  <input type="text" id="username" name="username" class="form-control form-control-lg"
+                    placeholder="Ingrese usuario" />
+
+                </div>
+              <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">Email:</label>
+                  <input type="email" id="email" name="email" class="form-control form-control-lg"
+                    placeholder="Ingrese email" />
 
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-3">
                     <label class="form-label" for="form3Example4">Contraseña:</label>
-                  <input type="password" id="pass" name="pass" class="form-control form-control-lg"
+                  <input type="password" id="password" name="password" class="form-control form-control-lg"
                     placeholder="Ingrese Contraseña" />
 
                 </div>
 
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg"
+                  <button type="submit" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;">
                     Acceso
                 </button>
@@ -67,11 +80,10 @@
 
                       </label>
                     </div>
-                    <a href="#!" class="text-body">Recupera Contraseña</a>
                 </form>
                   </div>
 
-                  <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Si tienes Cuenta, Ir a?
 
                 @if (Route::has('login'))
                  <a class="link-danger"><a href="{{ route('login') }}">{{ __('Login') }}</a>

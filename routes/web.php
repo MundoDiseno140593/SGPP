@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+
 Route::post('/login-acceso', [LoginController::class, 'login_acceso'])->name('login-acceso');
+
+Route::post('/login-registro', [RegisterController::class, 'register_create'])->name('login-registro');
+
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+
 
 

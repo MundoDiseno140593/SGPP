@@ -30,7 +30,6 @@
                         @csrf
                         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                             <p class="lead fw-normal mb-0 me-3 "></p>
-
                         </div>
 
                         <div class="divider d-flex align-items-center my-4">
@@ -40,46 +39,49 @@
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">usuario:</label>
-                            <input type="text" id="user" name="user" class="form-control form-control-lg"
+                            <input type="text" id="username" name="username" class="form-control form-control-lg"
                                 placeholder="Ingrese usuario" />
-
                         </div>
+                        @error('username')
+                            <small>{{ $message }}</small>
+                        @enderror
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">Contraseña:</label>
-                            <input type="password" id="pass" name="pass" class="form-control form-control-lg"
+                            <input type="password" id="password" name="password" class="form-control form-control-lg"
                                 placeholder="Ingrese Contraseña" />
-
                         </div>
 
+                        @error('password')
+                            <small>{{ $message }}</small>
+                        @enderror
+
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" class="btn btn-primary btn-lg"
+                            <button type="submit" class="btn btn-primary btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem;">
                                 Acceso
                             </button>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <!-- Checkbox -->
-                                <div class="form-check mb-0">
-
-                                    <label class="form-check-label" for="form2Example3">
-
-                                    </label>
-                                </div>
-                                <a href="#!" class="text-body">Recupera Contraseña</a>
                     </form>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <label class="form-check-label" for="form2Example3">
+                            </label>
+                        </div>
+                        <a href="#!" class="text-body">Recupera Contraseña</a>
+
+                    </div>
+
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
+
+                        @if (Route::has('register'))
+                            <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        @endif
+
+                    </p>
                 </div>
-
-                <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
-
-                    @if (Route::has('register'))
-                        <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
-                    @endif
-
-                </p>
             </div>
-        </div>
         </div>
         </div>
 
@@ -92,6 +94,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if ($message = Session::get('error'))
+        <script>
+            Swal.fire('{{ $message }}');
+        </script>
+    @endif
+
 </body>
 
 </html>
