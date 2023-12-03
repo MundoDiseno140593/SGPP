@@ -43,7 +43,7 @@
                                 placeholder="Ingrese usuario" />
                         </div>
                         @error('username')
-                            <small>{{ $message }}</small>
+                            <small class="text-danger">{{ $message }}</small>
                         @enderror
 
                         <!-- Password input -->
@@ -54,7 +54,7 @@
                         </div>
 
                         @error('password')
-                            <small>{{ $message }}</small>
+                            <small class="text-danger">{{ $message }}</small>
                         @enderror
 
                         <div class="text-center text-lg-start mt-4 pt-2">

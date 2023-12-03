@@ -8,7 +8,7 @@
         document.getElementById("header-lang-img") && ("en" == e ? document.getElementById("header-lang-img").src = "assets/images/flags/us.svg" : "sp" == e ? document.getElementById("header-lang-img").src = "{{asset('assets/images/flags/spain.svg'}}" : "gr" == e ? document.getElementById("header-lang-img").src = "assets/images/flags/germany.svg" : "it" == e ? document.getElementById("header-lang-img").src = "assets/images/flags/italy.svg" : "ru" == e ? document.getElementById("header-lang-img").src = "assets/images/flags/russia.svg" : "ch" == e ? document.getElementById("header-lang-img").src = "assets/images/flags/china.svg" : "fr" == e && (document.getElementById("header-lang-img").src = "assets/images/flags/french.svg"), localStorage.setItem("language", e), b = localStorage.getItem("language"), function () {
             null == b && y(g);
             var e = new XMLHttpRequest;
-            e.open("GET", "assets/lang/" + b + ".json"), e.onreadystatechange = function () {
+            e.open("GET", "{{asset('assets/lang/')}}" + b + ".json"), e.onreadystatechange = function () {
                 var a;
                 4 === this.readyState && 200 === this.status && (a = JSON.parse(this.responseText), Object.keys(a).forEach(function (t) {
                     var e = document.querySelectorAll("[data-key='" + t + "']");
