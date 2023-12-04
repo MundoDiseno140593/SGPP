@@ -41,7 +41,7 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-1 mb-2 text-white-50">
                             <div>
-                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">                    
+                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">
                             </div>
                             <p class="mt-3 fs-20 fw-medium">Gestión de Pasantías y Prácticas Profesionales</p>
                         </div>
@@ -90,7 +90,7 @@
                                 @if (Route::has('register'))
                                     <a class="fw-semibold text-primary text-decoration-underline" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 @endif
-                            </p>                       
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="text-center">                           
+                        <div class="text-center">
                         </div>
                     </div>
                 </div>
@@ -116,6 +116,7 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>

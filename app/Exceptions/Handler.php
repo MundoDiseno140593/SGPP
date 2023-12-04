@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -27,4 +28,23 @@ class Handler extends ExceptionHandler
             //
         });
     }
+ /**
+     * Render an exception into an HTTP response.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \Throwable $exception
+     * @return \Illuminate\Http\Response
+     *
+     * @throws \Throwable
+     */
+
+     public function render($request, Throwable $exception)
+     {
+         if ($this->isHttpException($exception) && $exception->getCode() == 404) {
+            dd('Hola, estoy aquí');
+             return response()->view('errors', [], 404);
+         }
+
+         return parent::render($request, $exception);
+     }
 }
