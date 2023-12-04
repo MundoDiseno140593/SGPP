@@ -52,34 +52,34 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
-
                             <div class="card-body p-4">
-                                <div class="text-center mt-2">
-                                    <h3 class="text-primary">Iniciar Sesión</h3>
-                                </div>
-                                <div class="p-2 mt-4">
-                                    <form action="{{ route('login-acceso') }}">
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">Usuario</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Olvidaste tu contraseña?</a>
+                                <form action="{{ route('login-acceso') }}" method="POST">
+                                 @csrf
+                                    <div class="text-center mt-2">
+                                        <h3 class="text-primary">Iniciar Sesión</h3>
+                                    </div>
+                                    <div class="p-2 mt-4">                                
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Usuario</label>
+                                                <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
                                             </div>
-                                            <label class="form-label" for="password-input">Contraseña</label>
-                                            <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input type="password" class="form-control pe-5" placeholder="Ingrese su contraseña" id="password-input">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                            </div>
-                                        </div>
 
-                                        <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Ingresar</button>
+                                            <div class="mb-3">
+                                                <div class="float-end">
+                                                    <a href="auth-pass-reset-basic.html" class="text-muted">Olvidaste tu contraseña?</a>
+                                                </div>
+                                                <label class="form-label" for="password-input">Contraseña</label>
+                                                <div class="position-relative auth-pass-inputgroup mb-3">
+                                                    <input type="password" class="form-control pe-5" placeholder="Ingrese su contraseña" id="password-input">
+                                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <button class="btn btn-success w-100" type="submit">Ingresar</button>
+                                            </div>    
                                         </div>
-                                    </form>
-                                </div>
+                                 </form>
                             </div>
                             <!-- end card body -->
                         </div>
@@ -130,5 +130,4 @@
     <!-- password-addon init -->
     <script src="assets/js/pages/password-addon.init.js"></script>
 </body>
-
 </html>

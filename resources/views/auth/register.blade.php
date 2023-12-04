@@ -97,7 +97,7 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Registrar</button>
+                                            <button class="btn btn-success w-100" type="submit">Registrarse</button>
                                         </div>
                                     </form>
                                 </div>
