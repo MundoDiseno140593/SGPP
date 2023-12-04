@@ -75,11 +75,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                                        </div>
-
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Ingresar</button>
                                         </div>
