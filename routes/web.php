@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('Auth.login');
 });
 
+Route::fallback(function () {
+    return view('error');
+});
 
 
 Auth::routes();
