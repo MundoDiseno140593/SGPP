@@ -58,7 +58,7 @@
                                     <h3 class="text-primary">Iniciar Sesión</h3>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="index.html">
+                                    <form action="{{ route('login-acceso') }}">
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuario</label>
                                             <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
