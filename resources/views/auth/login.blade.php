@@ -17,74 +17,63 @@
 </head>
 
 <body>
+    <!-- imagen logo -->
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="{{ asset('img/logo.webp') }}" class="img-fluid w-70 h-70" alt="Sample image">
+                    <img src="{{ asset('img/logo.webp') }}" class="img-fluid w-50 h-50" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-
-
-                    <form action="{{ route('login-acceso') }}" method="POST">
-                        @csrf
-                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                            <p class="lead fw-normal mb-0 me-3 "></p>
-                        </div>
-
+                    <form class="form" action="{{ route('login-acceso') }}" method="POST">
+                        @csrf                   
                         <div class="divider d-flex align-items-center my-4">
-                            <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesion</h2>
+                            <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesión</h2>
                         </div>
 
                         <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example3">usuario:</label>
-                            <input type="text" id="username" name="username" class="form-control form-control-lg"
-                                placeholder="Ingrese usuario" />
-                        </div>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <input type="text" id="username" name="username" class="form-input"
+                                    placeholder=""/>
+                                <label class="form-label" for="form3Example3">Usuario</label>
+                                <span class="form-line"></span>
+                            </div>
+                        
                         @error('username')
                             <small>{{ $message }}</small>
-                        @enderror
+                        @enderror      
 
                         <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <label class="form-label" for="form3Example4">Contraseña:</label>
-                            <input type="password" id="password" name="password" class="form-control form-control-lg"
-                                placeholder="Ingrese Contraseña" />
-                        </div>
+                            <div class="form-group">
+                                <input type="password" id="password" name="password" class="form-input"
+                                    placeholder=" "/>
+                                <label class="form-label" for="form3Example4">Contraseña</label>
+                            </div>
 
                         @error('password')
                             <small>{{ $message }}</small>
                         @enderror
 
-                        <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                                Acceso
-                            </button>
-                    </form>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-0">
-                            <label class="form-check-label" for="form2Example3">
-                            </label>
-                        </div>
-                        <a href="#!" class="text-body">Recupera Contraseña</a>
+                            <input type="submit" class="form-submit" value="Acceder">
 
-                    </div>
-
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Si no tienes una cuenta?
-
-                        @if (Route::has('register'))
-                            <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @endif
-
-                    </p>
-                </div>
+                                                       
+                        </div> 
+                        <div class="d-flex justify-content-between align-items-center">
+                                <div class="form-check mb-0">
+                                    <label class="form-check-label" for="form2Example3">
+                                    </label>
+                                    <p class="form-paragraph">¿Aún no tienes cuenta?
+                                        @if (Route::has('register'))
+                                            <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        @endif
+                                   </p>
+                                    <a href="#!" class="text-body">Recuperar Contraseña</a>
+                                </div>                
+                    </form>    
+                </div>         
             </div>
-        </div>
-        </div>
-
+       </div>
     </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -103,5 +92,4 @@
     @endif
 
 </body>
-
 </html>

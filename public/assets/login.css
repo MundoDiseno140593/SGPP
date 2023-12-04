@@ -1,4 +1,27 @@
-.divider:after,
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #e5e5f7;
+    background-image:  radial-gradient(#c657d8 0.5px, transparent 0.5px), radial-gradient(#c657d8 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    display: flex;
+    min-height: 100vh;
+    
+}
+.form{
+    background-color: #fff;
+    margin: 100px;
+    width: 100%;
+    max-width: 500px;
+    padding:2.5em 3em;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 80%);
+    text-align: center;
+}
+
+/*.divider:after,
 .divider:before {
 content: "";
 flex: 1;
@@ -13,7 +36,7 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
-/*width: 250px;
+width: 250px;
     left: 50%;
     margin-left: -125px;
     position: fixed;

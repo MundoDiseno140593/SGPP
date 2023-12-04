@@ -30,29 +30,28 @@
                 @csrf
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3 "></p>
-
                 </div>
 
                 <div class="divider d-flex align-items-center my-4">
-                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Registrar</h2>
+                  <h2 class="text-center fw-bold mx-3 mb-0 me-3">Registrarse</h2>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">Nombre Completo:</label>
+                    <label class="form-label" for="form3Example3">Nombre Completo</label>
                   <input type="text" id="name" name="name" class="form-control form-control-lg"
-                    placeholder="Ingrese usuario" />
+                    placeholder="Ingrese nombre completo"/>
 
                 </div>
 
                 <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">usuario:</label>
+                    <label class="form-label" for="form3Example3">usuario</label>
                   <input type="text" id="username" name="username" class="form-control form-control-lg"
                     placeholder="Ingrese usuario" />
 
                 </div>
               <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3">Email:</label>
+                    <label class="form-label" for="form3Example3">Email</label>
                   <input type="email" id="email" name="email" class="form-control form-control-lg"
                     placeholder="Ingrese email" />
 
@@ -60,7 +59,7 @@
 
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                    <label class="form-label" for="form3Example4">Contraseña:</label>
+                    <label class="form-label" for="form3Example4">Contraseña</label>
                   <input type="password" id="password" name="password" class="form-control form-control-lg"
                     placeholder="Ingrese Contraseña" />
 
@@ -69,7 +68,7 @@
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="submit" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                    Acceso
+                    Acceder
                 </button>
 
                 <div class="d-flex justify-content-between align-items-center">
