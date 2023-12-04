@@ -41,6 +41,8 @@
                             </div>
                         
                         @error('username')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                             <small>{{ $message }}</small>
                         @enderror      
 
@@ -52,7 +54,7 @@
                             </div>
 
                         @error('password')
-                            <small>{{ $message }}</small>
+                            <small class="text-danger">{{ $message }}</small>
                         @enderror
 
                             <input type="submit" class="form-submit" value="Acceder">
