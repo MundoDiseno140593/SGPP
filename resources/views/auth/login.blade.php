@@ -1,97 +1,139 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
 
 <head>
+
+    <meta charset="utf-8" />
     <title>Login</title>
-    <link rel="icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('img/logo.webp') }}" type="image/x-icon" />
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('assets/login.css') }}">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <!-- imagen logo -->
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="{{ asset('img/logo.webp') }}" class="img-fluid w-50 h-50" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form class="form" action="{{ route('login-acceso') }}" method="POST">
-                        @csrf                   
-                        <div class="divider d-flex align-items-center my-4">
-                            <h2 class="text-center fw-bold mx-3 mb-0 me-3">Iniciar Sesión</h2>
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="form-container">
-                            <div class="form-group">
-                                <input type="text" id="username" name="username" class="form-input"
-                                    placeholder=""/>
-                                <label class="form-label" for="form3Example3">Usuario</label>
-                                <span class="form-line"></span>
-                            </div>
-                        
-                        @error('username')
-                            <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                            <small>{{ $message }}</small>
-                        @enderror      
-
-                        <!-- Password input -->
-                            <div class="form-group">
-                                <input type="password" id="password" name="password" class="form-input"
-                                    placeholder=" "/>
-                                <label class="form-label" for="form3Example4">Contraseña</label>
-                            </div>
-
-                        @error('password')
-                            <small class="text-danger">{{ $message }}</small>
-                        @enderror
-
-                            <input type="submit" class="form-submit" value="Acceder">
-
-                                                       
-                        </div> 
-                        <div class="d-flex justify-content-between align-items-center">
-                                <div class="form-check mb-0">
-                                    <label class="form-check-label" for="form2Example3">
-                                    </label>
-                                    <p class="form-paragraph">¿Aún no tienes cuenta?
-                                        @if (Route::has('register'))
-                                            <a class="link-danger"><a href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        @endif
-                                   </p>
-                                    <a href="#!" class="text-body">Recuperar Contraseña</a>
-                                </div>                
-                    </form>    
-                </div>         
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
             </div>
-       </div>
-    </section>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-1 mb-2 text-white-50">
+                            <div>
+                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">                    
+                            </div>
+                            <p class="mt-3 fs-20 fw-medium">Gestión de Pasantías y Prácticas Profesionales</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
 
-    @if ($message = Session::get('error'))
-        <script>
-            Swal.fire('{{ $message }}');
-        </script>
-    @endif
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
 
+                            <div class="card-body p-4">
+                                <div class="text-center mt-2">
+                                    <h3 class="text-primary">Iniciar Sesión</h3>
+                                </div>
+                                <div class="p-2 mt-4">
+                                    <form action="index.html">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Usuario</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="float-end">
+                                                <a href="auth-pass-reset-basic.html" class="text-muted">Olvidaste tu contraseña?</a>
+                                            </div>
+                                            <label class="form-label" for="password-input">Contraseña</label>
+                                            <div class="position-relative auth-pass-inputgroup mb-3">
+                                                <input type="password" class="form-control pe-5" placeholder="Ingrese su contraseña" id="password-input">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <button class="btn btn-success w-100" type="submit">Ingresar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- end card body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="mt-4 text-center">
+                            <p class="mb-0">Aún no tienes cuenta ?
+                                @if (Route::has('register'))
+                                    <a class="fw-semibold text-primary text-decoration-underline" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                @endif
+                            </p>                       
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+    <!-- end auth-page-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- particles js -->
+    <script src="assets/libs/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="assets/js/pages/particles.app.js"></script>
+    <!-- password-addon init -->
+    <script src="assets/js/pages/password-addon.init.js"></script>
 </body>
+
 </html>
