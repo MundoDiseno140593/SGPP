@@ -83,7 +83,7 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Contraseña</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Ingrese una contraseña" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Ingrese una contraseña" id="password" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
@@ -146,6 +146,8 @@
     <script src="assets/libs/feather-icons/feather.min.js"></script>
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
     <!-- particles js -->
     <script src="assets/libs/particles.js/particles.js"></script>
@@ -153,6 +155,15 @@
     <script src="assets/js/pages/particles.app.js"></script>
     <!-- password-addon init -->
     <script src="assets/js/pages/password-addon.init.js"></script>
+    @push('scripts')
+    <script>
+        $(document).ready(function(){
+            ('#password-addon').click(function(){
+                const passwordField = $('#password')
+                const passwordFieldType = passwordField.attr('type',passwordFieldType==='password'? 'text':'password');
+            });
+        });
+    </script>
+    @endpush
 </body>
-
 </html>

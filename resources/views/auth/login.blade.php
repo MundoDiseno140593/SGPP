@@ -71,7 +71,7 @@
                                                 <label class="form-label" for="password">Contraseña</label>
                                                 <div class="position-relative auth-pass-inputgroup mb-3">
                                                     <input type="password" class="form-control pe-5" placeholder="Ingrese su contraseña" id="password" name="password">
-                                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle" ></i></button>
                                                 </div>
                                             </div>
 
@@ -117,6 +117,7 @@
 
     <!-- JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -129,6 +130,6 @@
     <!-- particles app js -->
     <script src="assets/js/pages/particles.app.js"></script>
     <!-- password-addon init -->
-    <script src="assets/js/pages/password-addon.init.js"></script>
+    <script src="SGPP/public/assets/js/pages/password-addon.init.js"></script>
 </body>
 </html>
