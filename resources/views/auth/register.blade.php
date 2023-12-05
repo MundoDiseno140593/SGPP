@@ -58,15 +58,15 @@
                                     <h3 class="text-primary">Crear Cuenta</h3>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="index.html">
+                                    <form action="{{ route('login-registro') }}" method="POST">
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Nombre completo</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre completo">
+                                            <label for="name" class="form-label">Nombre completo</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre completo">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="useremail" class="form-label">Correo <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo electrónico" required>
+                                            <label for="email" class="form-label">Correo <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
@@ -74,7 +74,7 @@
 
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuario <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="username" placeholder="Ingrese un usuario" required>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese un usuario" required>
                                             <div class="invalid-feedback">
                                                 Please enter username
                                             </div>
@@ -83,12 +83,20 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Contraseña</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Ingrese una contraseña" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Ingrese una contraseña" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="rol" class="form-label">Rol</label>
+                                            <select name="rol" class="form-control" id="rol">
+                                                <option value="dni">DNI</option>
+                                                <option value="pasaporte">PASAPORTE</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-check">
