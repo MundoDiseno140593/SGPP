@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::fallback(function () {
-    return view('error');
+    return view('Auth.register');
 });
 
 

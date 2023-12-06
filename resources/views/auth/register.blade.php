@@ -41,7 +41,7 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-1 mb-2 text-white-50">
                             <div>
-                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">                    
+                                <img src="/SGPP/public/dist/img/logo.webp" alt="" height="120">                    
                             </div>
                             <p class="mt-3 fs-20 fw-medium">Gestión de Pasantías y Prácticas Profesionales</p>
                         </div>

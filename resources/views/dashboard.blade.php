@@ -58,10 +58,15 @@
                   <i class="fas fa-expand-arrows-alt"></i>
                 </a>
               </li>
-            </ul>    
+              <li class="nav-item">
+                <a class="dropdown-item" href="{{ route('login') }}"><i
+                    class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                    class="align-middle" data-key="t-logout">Cerrar Sesión</span></a>
+              </li>
+            </ul>                    
         </nav>
   <!-- /.navbar -->
-
+  
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
