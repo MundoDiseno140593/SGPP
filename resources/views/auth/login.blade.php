@@ -130,6 +130,6 @@
     <!-- particles app js -->
     <script src="assets/js/pages/particles.app.js"></script>
     <!-- password-addon init -->
-    <script src="SGPP/public/assets/js/pages/password-addon.init.js"></script>
+    <script src="assets/js/pages/password-addon.init.js"></script>
 </body>
 </html>
