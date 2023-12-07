@@ -1,0 +1,287 @@
+/* Estilos generales */
+.clearfix:after {
+  content: "";
+  clear: both;
+}
+body {
+  position: relative;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  color: #310058;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-family: Arial;
+}
+
+header {
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+#logo {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 40px;
+}
+
+#logo img {
+  width: 10px;
+  height: 10px;
+}
+
+h3 {
+  border-top: 1px solid rgb(67, 0, 80);
+  border-bottom: 1px solid rgb(67, 0, 80);
+  color: rgb(67, 0, 80);
+  font-size: 2.1em;
+  line-height: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 20px 0;
+  background: url(../img/dimension.png);
+}
+
+#company {
+  float: right;
+  margin-top: -170px;
+  text-align: right;
+  padding: 5px;
+}
+
+#negocio {
+  font-size: 18px;
+  color: rgb(67, 0, 80);
+}
+
+
+#project {
+  margin-top: 45px;
+  color: rgb(0, 0, 0);
+}
+
+#project span {
+  color: rgb(67, 0, 80);
+  text-align: center;
+  width: 52px;
+  font-size: 14px;
+}
+
+
+#project .nombre {
+  color: rgb(67, 0, 80);
+  text-align: left;
+  width: 260px;
+  font-size: 14px;
+}
+ 
+#project .apellido {
+  color: rgb(67, 0, 80);
+  margin-left:200px;
+  text-align: center;
+  margin-top: -15px !important;
+  width: 260px;
+  
+  font-size: 14px;
+}
+
+#project .sexo {
+  color: rgb(67, 0, 80);
+  margin-left:550px;
+  margin-top: -15px !important;
+  width: 160px;
+  font-size: 14px;
+}
+
+#project .cedula {
+  color: rgb(67, 0, 80);
+  width: 200px;
+  margin-top:12px;
+  font-size: 14px;
+}
+
+#project .fecha {
+  color: rgb(67, 0, 80);
+  width: 200px;
+  margin-top:-16px !important;
+  margin-left: 260px;
+  font-size: 14px;
+}
+ 
+#project .edad {
+  color: rgb(67, 0, 80);
+  width: 162px;
+  margin-top:-15px;
+  margin-left: 570px;
+  font-size: 14px;
+}
+
+#project  .privados {
+  color: rgb(67, 0, 80);
+  width: 172px;
+  margin-top: 12px;
+  font-size: 14px;
+  
+}
+
+#project .codigo {
+  color: rgb(67, 0, 80);
+  width: 152px;
+  margin-top:-19px;
+  margin-left: 260px;
+  font-size: 14px;
+}
+
+#project .medi {
+  color: rgb(67, 0, 80);
+  width: 300px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#project .consult {
+  color: rgb(67, 0, 80);
+  width: 390px;
+  margin-left: 260px;
+  margin-top: -20px;
+  font-size: 14px;
+}
+
+main #container{
+  margin-top: -45px;
+}
+
+
+.digs {
+  height: 25px;
+  text-align:left;
+  border-radius: 5px;
+  background-color: rgb(106, 104, 104);
+}
+
+.diag {
+  font-weight: bold;
+  /* font-size: 16px; */
+  color: #000000;
+  margin:10px;
+ padding:10px;
+  font-style: normal;
+}
+
+.text-diagnost{
+    text-align:justify;
+}
+
+.subs {
+    height: 25px;
+    text-align:left;
+    border-radius: 5px;
+    background-color: rgb(106, 104, 104);
+  }
+  
+  .sub {
+    font-weight: bold;
+    /* font-size: 16px; */
+    color: #000000;
+    margin:10px;
+   padding:10px;
+    font-style: normal;
+  }
+  
+  .text-subs{
+      text-align:justify;
+  }
+  
+  .firma {
+    border: none;
+    border-top: 1px solid #0c0c0c;
+    margin: 70px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    margin-left: 300px;
+  }
+
+  .medico{
+    text-align: center;
+  margin-top: -40px !important;
+  font-family: serif;
+  }
+
+  .codig{
+    text-align: center;
+  margin-top: -10px !important;
+  font-family: serif;
+  }
+
+  #footer .user{
+    text-align:left;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+table tr:nth-child(2n-1) td {
+    background: rgb(224, 220, 230);
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+table th {
+    padding: 5px 20px;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid #C1CED9;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+table .service {
+    text-align: left;
+}
+
+table td.service {
+    vertical-align: top;
+}
+
+table .servic {
+    text-align: left;
+}
+
+table td.servic {
+    vertical-align: top;
+}
+
+table td {
+    font-size: 16px;
+    padding: 20px;
+    text-align: right;
+}
+
+
+
+table thead tr {
+  height: 80px;
+  background: rgb(173, 5, 156);
+}
+
+
+.clinica{
+  font-weight: 900;
+  color: rgb(4, 13, 142);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24pt;
+}
+
+
+

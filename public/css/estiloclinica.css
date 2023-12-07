@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@700&display=swap');
+
+
+:root{
+    --body-font:"Poppins", sans-serif;
+    --second-font:"Dancing Script", cursive;
+    --h2-font-size:12pt;
+    --h3-font-size:1rem;
+    --normal-font-size:.938rem;
+    --small-font-size:.900rem;
+    --smaller-font-size:.75rem;
+}
+
+@media screen and (min-width: 1024px) {
+    :root{
+        --h2-font-size:18pt;
+        --h3-font-size:1.25rem;
+        --normal-font-size:1rem;
+        --small-font-size:1.2em;
+        --smaller-font-size:.813rem;
+    }
+}
+
+
+.clinic{
+    color: rgb(4, 126, 166);
+    font-family:  var(--second-font);
+    font-size: 20pt;
+    font-weight: bold !important;
+    text-align: center !important;
+    
+  }
+  
+.clini{
+    font-family:  var(--second-font);
+    font-size: 14pt;
+    text-align: center !important;
+    font-weight: bold !important;
+    
+  }
+
+
+  .active{
+    font-family:  var(--second-font);
+    font-size: 20px;
+    font-weight: bold !important;
+  }
+
+  .info{
+    font-family:  var(--second-font);
+    font-size: 20px;
+    font-weight: bold !important;
+  }
+
+  /* .cmb{
+    font-family:  var(--second-font);
+    font-size: 15px;
+    font-weight: bold !important;
+  } */
+
+  .nam{
+    font-family:  var(--second-font);
+    font-size: 15px;
+    font-weight: bold !important;
+  }
+ 
