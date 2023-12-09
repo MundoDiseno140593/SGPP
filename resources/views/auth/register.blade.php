@@ -41,7 +41,7 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-1 mb-2 text-white-50">
                             <div>
-                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">                    
+                                <img src="/SGPP/public/dist/img/logo.webp" alt="" height="120">                    
                             </div>
                             <p class="mt-3 fs-20 fw-medium">Gestión de Pasantías y Prácticas Profesionales</p>
                         </div>
@@ -58,15 +58,15 @@
                                     <h3 class="text-primary">Crear Cuenta</h3>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="index.html">
+                                    <form action="{{ route('login-registro') }}" method="POST">
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Nombre completo</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre completo">
+                                            <label for="name" class="form-label">Nombre completo</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre completo">
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="useremail" class="form-label">Correo <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo electrónico" required>
+                                            <label for="email" class="form-label">Correo <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
@@ -74,7 +74,7 @@
 
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuario <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="username" placeholder="Ingrese un usuario" required>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese un usuario" required>
                                             <div class="invalid-feedback">
                                                 Please enter username
                                             </div>
@@ -83,7 +83,7 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Contraseña</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Ingrese una contraseña" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Ingrese una contraseña" id="password" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
@@ -91,9 +91,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                        <div class="mb-3">
+                                            <label for="rol" class="form-label">Rol</label>
+                                            <select name="rol" class="form-control" id="rol">
+                                                <option value="dni">DNI</option>
+                                                <option value="pasaporte">PASAPORTE</option>
+                                            </select>
                                         </div>
 
                                         <div class="mt-4">
@@ -143,6 +146,8 @@
     <script src="assets/libs/feather-icons/feather.min.js"></script>
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
     <!-- particles js -->
     <script src="assets/libs/particles.js/particles.js"></script>
@@ -150,6 +155,15 @@
     <script src="assets/js/pages/particles.app.js"></script>
     <!-- password-addon init -->
     <script src="assets/js/pages/password-addon.init.js"></script>
+    @push('scripts')
+    <script>
+        $(document).ready(function(){
+            ('#password-addon').click(function(){
+                const passwordField = $('#password')
+                const passwordFieldType = passwordField.attr('type',passwordFieldType==='password'? 'text':'password');
+            });
+        });
+    </script>
+    @endpush
 </body>
-
 </html>

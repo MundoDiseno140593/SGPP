@@ -42,7 +42,7 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-1 mb-2 text-white-50">
                             <div>
-                                <img src="{{ asset('img/logo.webp') }}" alt="" height="120">
+                                <img src="/SGPP/public/dist/img/logo.webp" alt="" height="120">
                             </div>
                             <p class="mt-3 fs-20 fw-medium">Gestión de Pasantías y Prácticas Profesionales</p>
                         </div>
@@ -59,11 +59,34 @@
                                     <div class="text-center mt-2">
                                         <h3 class="text-primary">Iniciar Sesión</h3>
                                     </div>
+<<<<<<< HEAD
                                     <div class="p-2 mt-4">
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Usuario</label>
                                             <input type="text" class="form-control" id="username" name="username"
                                                 placeholder="Ingrese su usuario">
+=======
+                                    <div class="p-2 mt-4">                                
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Usuario</label>
+                                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su usuario">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="float-end">
+                                                    <a href="auth-pass-reset-basic.html" class="text-muted">Olvidaste tu contraseña?</a>
+                                                </div>
+                                                <label class="form-label" for="password">Contraseña</label>
+                                                <div class="position-relative auth-pass-inputgroup mb-3">
+                                                    <input type="password" class="form-control pe-5" placeholder="Ingrese su contraseña" id="password" name="password">
+                                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle" ></i></button>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <button class="btn btn-success w-100" type="submit">Ingresar</button>
+                                            </div>    
+>>>>>>> 0fdf1f4b8acae0491dcc01ea8789f6bf9f4cebce
                                         </div>
 
                                         <div class="mb-3">
@@ -96,8 +119,12 @@
                         <div class="mt-4 text-center">
                             <p class="mb-0">Aún no tienes cuenta ?
                                 @if (Route::has('register'))
+<<<<<<< HEAD
                                     <a class="fw-semibold text-primary text-decoration-underline"
                                         href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+=======
+                                    <a class="fw-semibold text-primary text-decoration-underline" href="{{ route('login-registro') }}">{{ __('Registrarse') }}</a>
+>>>>>>> 0fdf1f4b8acae0491dcc01ea8789f6bf9f4cebce
                                 @endif
                             </p>
                         </div>
@@ -125,8 +152,13 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
+<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+=======
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+>>>>>>> 0fdf1f4b8acae0491dcc01ea8789f6bf9f4cebce
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
