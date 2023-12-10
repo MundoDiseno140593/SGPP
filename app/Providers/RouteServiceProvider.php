@@ -18,9 +18,8 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const LOGIN = '/login';
+    public const HOME = '/dashboard'; // o cualquier ruta que uses para el dashboard
 
-    public const HOME = '/home';
-    /*public const HOME = '/home';
 
 
 

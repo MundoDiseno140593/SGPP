@@ -35,27 +35,35 @@ class LoginController extends Controller
             'password'=>'required'
         ]);
 
-        // $data=[
-        //     'username'=>$request->user,
-        //     'password'=>$request->pass
-        // ];
+
 
         if (Auth::attempt($acredenciales)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended(route('dashboard'));
         }else{
             return redirect()->route('login')->with('error','usuario y Contraseña Incorrectas');
         }
 
     }
 
-    public function logout(Request $request)
-    {
-        Auth::logout();
+    // public function logout(Request $request)
+    // {
+    //     Auth::logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+    //     $request->session()->invalidate();
+    //     $request->session()->regenerateToken();
 
-        return redirect(route('login'));
-    }
+    //     return redirect(route('login'));
+    // }
+
+    public function logout(Request $request):RedirectResponse
+{
+    $this->guard()->logout();
+
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('login')->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+}
 }

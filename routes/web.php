@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -28,22 +29,32 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/registro', [RegisterController::class, 'showRegistrationForm'])->name('registro');
 
 Route::post('/login-acceso', [LoginController::class, 'login_acceso'])->name('login-acceso');
-
-
-Route::get('/registro', [RegisterController::class, 'showRegistrationForm'])->name('registro');
 
 Route::post('/login_registro', [RegisterController::class, 'register_create'])->name('login_registro');
 
 
+
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
 
+// Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+// Route::post('/login-acceso', [LoginController::class, 'login_acceso'])->name('login-acceso');
 
 
+// Route::get('/registro', [RegisterController::class, 'showRegistrationForm'])->name('registro');
+
+// Route::post('/login_registro', [RegisterController::class, 'register_create'])->name('login_registro');

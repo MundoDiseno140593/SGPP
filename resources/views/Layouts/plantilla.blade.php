@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SGPP</title>
@@ -100,10 +103,9 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link text-black nam" data-toggle="dropdown" href="#">
-                    <img id="avatar4" src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="" class="img-fluid img-circle" width="30"
-                            height="30">
-                            {{ $nombreUsuario }} | <i class="fas fa-caret-down fa-2x fa-lg"
-                            style="color: #4b1f51;"></i>
+                        <img id="avatar4" src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt=""
+                            class="img-fluid img-circle" width="30" height="30">
+                        {{ $nombreUsuario }} | <i class="fas fa-caret-down fa-2x fa-lg" style="color: #4b1f51;"></i>
                         <span class="badge badge-warning navbar-badge"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -332,20 +334,24 @@
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-    <script src="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-7HFA2LKkAB8gjK94aJYA0PeygFJo2/RRPqY1Gm2cMmc1zJCJxIr1UYis8v2sLq1A+eJNLe80va5kmD9SlAJ+Jw==" crossorigin="anonymous" />"></script>
+    <script src="<link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+        integrity="sha512-7HFA2LKkAB8gjK94aJYA0PeygFJo2/RRPqY1Gm2cMmc1zJCJxIr1UYis8v2sLq1A+eJNLe80va5kmD9SlAJ+Jw=="
+        crossorigin="anonymous" />"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-Mi6K+9C1vX5F2g3OD1RAlIAP3zj4pem6upOxlKVp6SojGIknVbbDOHmSsMXoGI5Vn9BvlC9M2cCswpYbboBhbg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+        integrity="sha512-Mi6K+9C1vX5F2g3OD1RAlIAP3zj4pem6upOxlKVp6SojGIknVbbDOHmSsMXoGI5Vn9BvlC9M2cCswpYbboBhbg=="
+        crossorigin="anonymous"></script>
 
 
-        <!-- resources/views/your-view.blade.php -->
-@section('scripts')
-@parent
-<script>
-    $(document).ready(function() {
-        $('.select2').select2();
-    });
-</script>
-@endsection
+    <!-- resources/views/your-view.blade.php -->
+    @section('scripts')
+        @parent
+        <script>
+            $(document).ready(function() {
+                $('.select2').select2();
+            });
+        </script>
+    @endsection
 </body>
 
 </html>
