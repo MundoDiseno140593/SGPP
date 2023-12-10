@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'username',
         'password',
+        'id_tipo', // Agregar la columna id_tipo para permitir asignación masiva
     ];
 
     /**
@@ -43,4 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function tipo()
+    {
+        return $this->belongsTo(Tipo::class, 'id_tipo');
+    }
 }

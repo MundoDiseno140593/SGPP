@@ -20,9 +20,10 @@ Route::get('/', function () {
     return view('Auth.login');
 });
 
-Route::fallback(function () {
-    return view('Auth.register');
-});
+
+// Route::fallback(function () {
+//     return view('Auth.register');
+// });
 
 
 Auth::routes();
@@ -31,7 +32,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('/login-acceso', [LoginController::class, 'login_acceso'])->name('login-acceso');
 
-Route::post('/login-registro', [RegisterController::class, 'register_create'])->name('login-registro');
+
+Route::get('/registro', [RegisterController::class, 'showRegistrationForm'])->name('registro');
+
+Route::post('/login_registro', [RegisterController::class, 'register_create'])->name('login_registro');
 
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');

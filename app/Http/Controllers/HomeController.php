@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        return view('dashboard');
+        if (Auth::check()) {
+            $usuario = Auth::user();
+            $nombreUsuario = $usuario->name;
+        } else {
+            $nombreUsuario = null;
+        }
+
+        $fecha = now();
+        return view('dashboard', compact('fecha'))->with('nombreUsuario', $nombreUsuario);
     }
 }

@@ -90,7 +90,7 @@
                         <div class="mt-4 text-center">
                             <p class="mb-0">Aún no tienes cuenta ?
                                 @if (Route::has('register'))
-                                    <a class="fw-semibold text-primary text-decoration-underline" href="{{ route('login-registro') }}">{{ __('Registrarse') }}</a>
+                                    <a class="fw-semibold text-primary text-decoration-underline" href="{{ route('registro') }}">{{ __('Registrarse') }}</a>
                                 @endif
                             </p>
                         </div>
