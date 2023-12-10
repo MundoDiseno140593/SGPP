@@ -72,38 +72,81 @@ class RegisterController extends Controller
     //     return redirect(route('dashboard'));
     // }
 
-    public function register_create(Request $request)
+//     public function register_create(Request $request)
+// {
+
+// //  dd($request->all());
+
+
+//     try {
+//         Log::info('Entrando en register_create');
+
+//         $request->validate([
+//             'name' => 'required|string|max:255',
+//             'email' => 'required|string|email|max:255|unique:users',
+//             'username' => 'required|string|max:255|unique:users',
+//             'password' => 'required|string|min:8|confirmed',
+//             'tipo' => 'required|exists:tipos,id',
+//         ]);
+
+
+//         $user = new User();
+
+//         $user->name = $request->name;
+//         $user->email = $request->email;
+//         $user->username = $request->username;
+//         $user->password = Hash::make($request->password);
+//         dd($request->tipo);
+//         $user->tipo()->associate($request->tipo);
+
+//         $user->save();
+
+//         dd($user);
+
+//         Auth::login($user);
+
+//         Log::info('Usuario registrado con éxito');
+//         return redirect(route('dashboard'));
+//     } catch (\Exception $e) {
+//         Log::error('Error al registrar usuario: ' . $e->getMessage());
+//          // Agregar redirección de vuelta al formulario de registro con un mensaje de error si es necesario
+//         return redirect()->back()->with('error', 'Error al registrar usuario. Por favor, inténtelo de nuevo.');
+//     }
+// }
+
+
+
+public function register_create(Request $request)
 {
     try {
-        Log::info('Entrando en register_create');
-
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8',
             'tipo' => 'required|exists:tipos,id',
         ]);
 
-        $user = new User();
 
+
+        $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
         $user->id_tipo = $request->tipo;
 
+
+
         $user->save();
 
-        dd($user);
-        // Auth::login($user);
+        Auth::login($user);
 
-        // Log::info('Usuario registrado con éxito');
-        // return redirect(route('dashboard'));
+        return redirect(route('dashboard'));
     } catch (\Exception $e) {
-        Log::error('Error al registrar usuario: ' . $e->getMessage());
-        // Agregar redirección de vuelta al formulario de registro con un mensaje de error si es necesario
-        // return redirect()->back()->with('error', 'Error al registrar usuario. Por favor, inténtelo de nuevo.');
+        dd("Error: " . $e->getMessage());
+        return redirect()->back()->with('error', 'Error al registrar usuario. Por favor, inténtelo de nuevo.');
     }
 }
+
 }
